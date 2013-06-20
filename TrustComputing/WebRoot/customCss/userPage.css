@@ -1,0 +1,132 @@
+/**
+ * Created with JetBrains WebStorm.
+ * User: zzk
+ * Date: 12-11-13
+ * Time: 下午9:54
+ * styles applied by user home page layout
+ */
+html, body {
+    font-size: 15px;
+    padding: 0px;
+    text-align: center;
+    margin: 0px auto; /* remove the padding between the main container and the broswer window */
+}
+
+#container{
+    height: 820px;
+	text-align: center;
+	margin: 0 auto;
+    width: 950px;
+    border: 1px solid green;
+}
+
+/*header style*/
+#header{
+    width: 950px;
+    height: 162px;
+    background: url("../img/header_background.jpg");
+    margin-bottom: 5px;
+}
+.logo {
+    float: left;
+    margin-top:35px;
+    margin-left: 20px;
+    width: 175px;
+    height: 60px;
+    background: url("../img/header_logo_0106.png") no-repeat;
+}
+
+#exitSystem {
+    float: right;
+    margin-top:115px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+}
+
+#alterPasswd {
+    float: right;
+    margin-top:115px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+}
+/* main body style*/
+#main {
+	clear: both;
+    width: 950px;
+    height: 785px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+/* footer style */
+#footer{
+    width: 950px;
+    height: 70px;
+    text-align: center;
+    margin: 0px auto;
+    border: 1px solid green;
+}
+
+#footer span {
+	font-family: "楷体";
+	font-size: 1em;
+	color: #2F4F4F;
+	margin-top:10px;
+}
+
+/*
+ * vertical tab styles starts
+ */
+#tabs {
+	width: 950px;
+	height: 785px;
+	padding: 0;
+	margin:0;
+	
+}
+
+#tab1, #tab2, #tab3, #tab4, #tab5, #tab6
+{
+	text-align: left;
+	border: none;
+	padding-top: 5px;
+}
+
+.ui-tabs-vertical 
+{ 
+	width: 55em; 
+}
+.ui-tabs-vertical .ui-tabs-nav 
+{ 
+	padding: .2em .1em .2em .2em; 
+	float: left; 
+	width: 12em;
+}
+.ui-tabs-vertical .ui-tabs-nav li 
+{ 
+	clear: left; 
+	width: 100%; 
+	border-bottom-width: 1px !important; 
+	border-right-width: 0 !important; 
+	margin: 0 -2px .2em 0; 
+}
+.ui-tabs-vertical .ui-tabs-nav li a 
+{ 
+	display:block; 
+}
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active 
+{ 
+	padding-bottom: 0; 
+	padding-right: .1em; 
+	border-right-width: 1px; 
+	border-right-width: 1px; 
+}
+.ui-tabs-vertical .ui-tabs-panel 
+{ 
+	margin:5px;
+	float: right; 
+	width: 37em;
+}
+/* vertical tab style ends*/
+
+

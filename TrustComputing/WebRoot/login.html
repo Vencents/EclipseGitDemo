@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>电力网络终端监控系统-登陆</title>
+		<meta http-equiv="description" content="Login page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.21.custom.css">
+		<link rel="stylesheet" type="text/css" href="customCss/coommon.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.21.custom.min.js"></script>
+		<script type="text/javascript" src="customJs/login.js"></script>
+		<style type="text/css">
+			body {font-family: "Verdana,Arial,sans-serif"; font-size: 14px;}
+			h1 {font-size:2.5em; text-align:center; font-color: green; margin-top: 70px;}
+			#container_inner{margin: 0px auto; text-align: center; width: 350px;}
+			.container_widegts {border:1px solid green; border-bottom:none;}
+			.container_widegts label {float: left; width: 39%; text-align: right; padding: 5px 0px; margin: 5px 0px; font-size: 1.3em;}
+			.container_widegts input {width: 58%; padding: 5px 0px; margin: 5px 0px;}
+			#container_choice {text-align: center; font-size: 1.3em; padding: 5px 0px; border: 1px solid green;}
+			#container_btns {border: 1px solid green;}
+			#btn_login {float: left; width: 48%; margin: 0px; padding: 5px 0px;}
+			#btn_reset {float: right; width:48%; margin:0px; padding: 5px 0px;}
+			.common {border: none;}
+		</style>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		
+	</head>
+	<body bgcolor="#66CCFF">
+				<h1>电力网络终端监控系统</h1>
+				<div id="container_inner">
+					<div class="container_widegts">
+						<label for="userName">登录用户名：</label>
+						<input type="text" name="userName" id="userName"/>
+					</div>
+					<div class="container_widegts">
+						<div class="common" style="clear: both; "></div>
+						<label for="userPasswd">登录密码：</label>
+						<input type="password" name="userPasswd" id="userPasswd"/>
+					</div>
+					<div id="container_choice">
+						<input type="radio" id="userType" name="userType" value="0" checked="checked"/>普通用户
+						<input type="radio" id="userType" name="userType" value="1"/>超级用户
+						<input type="radio" id="userType" name="userType" value="2"/>管理员
+					</div>
+					<div id="container_btns">
+						<div id="btn_login" class="common">
+							<button id="login">登录</button>
+						</div>
+						<div id="btn_reset" class="common">
+							<button id="reset">重置</button>
+						</div>
+						<!-- extend the body div to contain all floating elements -->
+						<div class="common" style="clear: both;" id="tips"></div>
+					</div>
+				</div>
+	</body>
+</html>

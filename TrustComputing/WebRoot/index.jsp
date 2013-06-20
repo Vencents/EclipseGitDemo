@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>电力网络终端监控系统-管理首页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- The styles -->
+	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+	<style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+	</style>
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/charisma-app.css" rel="stylesheet">
+	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+	<link href='css/fullcalendar.css' rel='stylesheet'>
+	<link href='css/fullcalendar.print.css' rel='stylesheet'  media='print'>
+	<link href='css/chosen.css' rel='stylesheet'>
+	<link href='css/uniform.default.css' rel='stylesheet'>
+	<link href='css/colorbox.css' rel='stylesheet'>
+	<link href='css/jquery.cleditor.css' rel='stylesheet'>
+	<link href='css/jquery.noty.css' rel='stylesheet'>
+	<link href='css/noty_theme_default.css' rel='stylesheet'>
+	<link href='css/elfinder.min.css' rel='stylesheet'>
+	<link href='css/elfinder.theme.css' rel='stylesheet'>
+	<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+	<link href='css/opa-icons.css' rel='stylesheet'>
+	<link href='css/uploadify.css' rel='stylesheet'>
+	<link href='jqGrid/css/ui.jqgrid.css' rel='stylesheet'>
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- The fav icon -->
+	<link rel="shortcut icon" href="img/favicon.ico">
+		
+</head>
+
+<body>
+		<!-- topbar starts -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="index.jsp"> <img alt="Charisma Logo" src="img/logo20.png" /> <span class="span4">State Grid System</span></a>
+				
+				<!-- theme selector starts -->
+				<div class="btn-group pull-right theme-container" >
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-tint"></i><span class="hidden-phone"> 变更主题 /皮肤</span>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" id="themes">
+						<li><a data-value="classic" href="#"><i class="icon-blank"></i> Classic</a></li>
+						<li><a data-value="cerulean" href="#"><i class="icon-blank"></i> Cerulean</a></li>
+						<li><a data-value="cyborg" href="#"><i class="icon-blank"></i> Cyborg</a></li>
+						<li><a data-value="redy" href="#"><i class="icon-blank"></i> Redy</a></li>
+						<li><a data-value="journal" href="#"><i class="icon-blank"></i> Journal</a></li>
+						<li><a data-value="simplex" href="#"><i class="icon-blank"></i> Simplex</a></li>
+						<li><a data-value="slate" href="#"><i class="icon-blank"></i> Slate</a></li>
+						<li><a data-value="spacelab" href="#"><i class="icon-blank"></i> Spacelab</a></li>
+						<li><a data-value="united" href="#"><i class="icon-blank"></i> United</a></li>
+					</ul>
+				</div>
+				<!-- theme selector ends -->
+				
+				<!-- user dropdown starts -->
+				<div class="btn-group pull-right" >
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-user"></i><span class="hidden-phone" id="adminName"> <%=session.getAttribute("userName") %></span>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">个人档案</a></li>
+						<li class="divider"></li>
+						<li><a href="#">退出系统</a></li>
+					</ul>
+				</div>
+				<!-- user dropdown ends -->
+			</div>
+		</div>
+	</div>
+	<!-- topbar ends -->
+		<div class="container-fluid">
+		<div class="row-fluid">
+				
+			<!-- left menu starts -->
+			<div class="span2 main-menu-span">
+				<div class="well nav-collapse sidebar-nav">
+					<ul class="nav nav-tabs nav-stacked main-menu">
+						<li class="nav-header hidden-tablet">系统功能</li>
+						<li><a class="ajax-link" id="item1"  href="usertables.jsp"><i class="icon-align-justify"></i><span class="hidden-tablet"> 用户详情</span></a></li>
+						<li><a class="ajax-link" id="item2" href="terminals.jsp"><i class="icon-picture"></i><span class="hidden-tablet"> 终端详情</span></a></li>
+						<li><a class="ajax-link" id="item3" href="flowcharts.jsp"><i class="icon-list-alt"></i><span class="hidden-tablet"> 流量监控</span></a></li>
+						<li class="nav-header hidden-tablet">主面板</li>
+						<li><a class="ajax-link" id="item4" href="index.jsp"><i class="icon-home"></i><span class="hidden-tablet"> 信息概览</span></a></li>
+						<li><a href="tour.jsp" id="item5" ><i class="icon-globe"></i><span class="hidden-tablet"> 系统导航</span></a></li>
+						<li><a class="ajax-link" id="item6" href="calendar.jsp"><i class="icon-calendar"></i><span class="hidden-tablet"> 日历安排</span></a></li>
+						<li><a class="ajax-link" id="item7" href="companyrules.jsp"><i class="icon-font"></i><span class="hidden-tablet"> 规章制度</span></a></li>
+						<li><a href="#" id="item8" ><i class="icon-lock"></i><span class="hidden-tablet"> 登出系统</span></a></li>
+					</ul>				
+				</div><!--/.well -->
+			</div><!--/span-->
+			<!-- left menu ends -->
+			
+			<noscript>
+				<div class="alert alert-block span10">
+					<h4 class="alert-heading">警告!</h4>
+					<p>你需要启用 <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> 以正常访问本系统.</p>
+				</div>
+			</noscript>
+			
+			<div id="content" class="span10">
+			<!-- content starts -->
+			
+
+			<div>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#">主面板</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="#">信息概览</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well">
+						<h2><i class="icon-info-sign"></i> 公司介绍</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="row-fluid ">            
+							  <div class="span12">
+							  	<p>&nbsp;&nbsp;&nbsp;&nbsp;
+							  	国家电网公司（State Grid），简称国家电网和国网，成立于2002年12月29日，是经过国务院同意进行国家授权投资的机构和
+							  	国家控股公司的试点单位。公司作为关系国家能源安全和国民经济命脉的国有重要骨干企业，以投资、建设和运行经营电网为
+							  	核心业务，为经济社会发展提供坚强的智能电网保障。公司员工数量超过150万人，注册资金为2000亿元人民币，经营区域覆
+							  	盖全国26个省、自治区和直辖市，覆盖国土面积的88%以上。公司实行总经理负责制，总经理是公司的法定代表人。
+							  	</p>
+							  </div>
+						</div>
+					<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+					
+			<div class="row-fluid sortable">
+				<div class="box span5">
+					<div class="box-header well">
+						<h2><i class="icon-th"></i> 系统版权说明</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<dl>
+							<dt>条例一</dt>
+							<dd>本系统采用B/S架构，处于业界领先地位。页面部署合理，策略配置灵活，具有上手快，操作简单、安全稳定等特点。</dd>
+							<dt>条例二</dt>
+							<dd>主要用于对电力系统中的终端进行管理和监控，保证行业信息安全。</dd>
+							<dt>条例三</dt>
+							<dd>浏览器端的用户请在操作完成之后，点击安全退出来保证退出时会话被安全删除。</dd>
+							<dt>条例四</dt>
+							<dd>本系统UI部分使用bootstrap进行美化，但是相应的功能基本实现。不影响实际使用。</dd>
+							<dt>条例五</dt>
+							<dd>系统页面采用了jQuery和jqGrid等插件进行数据呈现，用户体验已经有一定程度的提升。</dd>
+							<dt>条例六</dt>
+							<dd>在客户端使用的一个独立的应用监控软件，该软件负责数据采集、命令执行和行为监控等的实际工作。</dd>						
+						</dl>
+					</div>
+				</div><!--/span-->
+						
+				<div class="box span7">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-user"></i> 管理员个人信息</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<form class="form-horizontal">
+							<fieldset>
+								<div class="alert alert-error">
+									<button type="button" class="close" data-dismiss="alert">×</button>
+									<strong>注意:</strong> 管理员信息只能读不可修改。
+								</div>
+								 <div class="control-group">
+									<label class="control-label">用户名称</label>
+									<div class="controls">
+									  <span class="input-xlarge uneditable-input" id="name"></span>
+									</div>
+								  </div>
+								 <div class="control-group">
+									<label class="control-label">信任状态</label>
+									<div class="controls">
+									  <span class="input-xlarge uneditable-input" id="state"></span>
+									</div>
+								  </div>
+								 <div class="control-group">
+									<label class="control-label">信任度等级</label>
+									<div class="controls">
+									  <span class="input-xlarge uneditable-input" id="level"></span>
+									</div>
+								  </div>
+								 <div class="control-group">
+									<label class="control-label">信任度值</label>
+									<div class="controls">
+									  <span class="input-xlarge uneditable-input" id="value"></span>
+									</div>
+								  </div>
+								 <div class="control-group">
+									<label class="control-label">类型</label>
+									<div class="controls">
+									  <span class="input-xlarge uneditable-input" id="type"></span>
+									</div>
+								  </div>
+								 <div class="control-group">
+									<label class="control-label">上次登录</label>
+									<div class="controls">
+									  <span class="input-xlarge uneditable-input" id="last"></span>
+									</div>
+								  </div>
+								  <span class="btn btn-small btn-primary" id="viewInfo">显示信息</span>
+
+							</fieldset>
+						</form>					
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+			<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-list"></i> 管理员日志</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<table id="list_manager_log"></table> 
+  	  					<div id="list_manager_log_pager" style="text-align: right;" class="scroll"></div>		
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+			<!-- content ends -->
+			</div><!--/#content.span10-->
+			</div><!--/fluid-row-->
+				
+		<hr>
+
+		<div class="modal hide fade" id="myModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>设置</h3>
+			</div>
+			<div class="modal-body">
+				<p>抱歉，系统配置暂时不开放！</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">关闭</a>
+				<a href="#" class="btn btn-primary">提交变更</a>
+			</div>
+		</div>
+
+		<footer>
+			<p class="pull-left">&copy; <a href="http://www.cnblogs.com/csuftzzk" target="_blank">ZhangZhongke@24K纯开源</a> 2012-2013</p>
+			<p class="pull-right">Powered by: <a href="http://blog.sina.com.cn/hustsecurity">华中科技大学信息安全与保密研究所</a></p>
+		</footer>
+		
+	</div><!--/.fluid-container-->
+
+	<!-- external javascript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+	<!-- jQuery -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<!-- jQuery UI -->
+	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+
+	<script type="text/javascript" src="customJs/index.js"></script>
+	<script type="text/javascript" src="jqGrid/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="jqGrid/js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="jqGrid/js/i18n/grid.locale-cn.js"></script>	
+	<!-- transition / effect library -->
+	<script src="js/bootstrap-transition.js"></script>
+	<!-- alert enhancer library -->
+	<script src="js/bootstrap-alert.js"></script>
+	<!-- modal / dialog library -->
+	<script src="js/bootstrap-modal.js"></script>
+	<!-- custom dropdown library -->
+	<script src="js/bootstrap-dropdown.js"></script>
+	<!-- scrolspy library -->
+	<script src="js/bootstrap-scrollspy.js"></script>
+	<!-- library for creating tabs -->
+	<script src="js/bootstrap-tab.js"></script>
+	<!-- library for advanced tooltip -->
+	<script src="js/bootstrap-tooltip.js"></script>
+	<!-- popover effect library -->
+	<script src="js/bootstrap-popover.js"></script>
+	<!-- button enhancer library -->
+	<script src="js/bootstrap-button.js"></script>
+	<!-- accordion library (optional, not used in demo) -->
+	<script src="js/bootstrap-collapse.js"></script>
+	<!-- carousel slideshow library (optional, not used in demo) -->
+	<script src="js/bootstrap-carousel.js"></script>
+	<!-- autocomplete library -->
+	<script src="js/bootstrap-typeahead.js"></script>
+	<!-- tour library -->
+	<script src="js/bootstrap-tour.js"></script>
+	<!-- library for cookie management -->
+	<script src="js/jquery.cookie.js"></script>
+	<!-- calander plugin -->
+	<script src='js/fullcalendar.min.js'></script>
+	<!-- data table plugin -->
+	<script src='js/jquery.dataTables.min.js'></script>
+
+	<!-- select or dropdown enhancer -->
+	<script src="js/jquery.chosen.min.js"></script>
+	<!-- checkbox, radio, and file input styler -->
+	<script src="js/jquery.uniform.min.js"></script>
+	<!-- plugin for gallery image view -->
+	<script src="js/jquery.colorbox.min.js"></script>
+	<!-- rich text editor library -->
+	<script src="js/jquery.cleditor.min.js"></script>
+	<!-- notification plugin -->
+	<script src="js/jquery.noty.js"></script>
+	<!-- file manager library -->
+	<script src="js/jquery.elfinder.min.js"></script>
+	<!-- star rating plugin -->
+	<script src="js/jquery.raty.min.js"></script>
+	<!-- for iOS style toggle switch -->
+	<script src="js/jquery.iphone.toggle.js"></script>
+	<!-- autogrowing textarea plugin -->
+	<script src="js/jquery.autogrow-textarea.js"></script>
+	<!-- multiple file upload plugin -->
+	<script src="js/jquery.uploadify-3.1.min.js"></script>
+	<!-- history.js for cross-browser state change on ajax -->
+	<script src="js/jquery.history.js"></script>
+	<!-- application script for Charisma demo -->
+	<script src="js/charisma.js"></script>
+		
+</body>
+</html>

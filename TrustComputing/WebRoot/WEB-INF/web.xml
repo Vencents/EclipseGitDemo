@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SessionValidate</servlet-name>
+    <servlet-class>utilities.SessionValidate</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>loginCheck</servlet-name>
+    <servlet-class>utilities.loginCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AlterPasswd</servlet-name>
+    <servlet-class>utilities.AlterPasswd</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConnectionInit</servlet-name>
+    <servlet-class>database.ConnectionInit</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerInfo</servlet-name>
+    <servlet-class>logicHandler.ManagerInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SystemLogger</servlet-name>
+    <servlet-class>logicHandler.SystemLogger</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ModifyTables</servlet-name>
+    <servlet-class>logicHandler.ModifyTables</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>logicHandler.AddUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViolenceHistory</servlet-name>
+    <servlet-class>logicHandler.ViolenceHistory</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TrustSettings</servlet-name>
+    <servlet-class>logicHandler.TrustSettings</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProcessInfo</servlet-name>
+    <servlet-class>logicHandler.ProcessInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PlatformInfo</servlet-name>
+    <servlet-class>logicHandler.PlatformInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeState</servlet-name>
+    <servlet-class>logicHandler.ChangeState</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdjustTrustLevel</servlet-name>
+    <servlet-class>logicHandler.AdjustTrustLevel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginFilter</servlet-name>
+    <servlet-class>logicHandler.LoginFilter</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FlowInfo</servlet-name>
+    <servlet-class>logicHandler.FlowInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FlowRank</servlet-name>
+    <servlet-class>logicHandler.FlowRank</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>SessionValidate</servlet-name>
+    <url-pattern>/SessionValidate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>loginCheck</servlet-name>
+    <url-pattern>/loginCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AlterPasswd</servlet-name>
+    <url-pattern>/AlterPasswd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConnectionInit</servlet-name>
+    <url-pattern>/ConnectionInit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerInfo</servlet-name>
+    <url-pattern>/ManagerInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SystemLogger</servlet-name>
+    <url-pattern>/SystemLogger</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModifyTables</servlet-name>
+    <url-pattern>/ModifyTables</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/AddUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViolenceHistory</servlet-name>
+    <url-pattern>/ViolenceHistory</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TrustSettings</servlet-name>
+    <url-pattern>/TrustSettings</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProcessInfo</servlet-name>
+    <url-pattern>/ProcessInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PlatformInfo</servlet-name>
+    <url-pattern>/PlatformInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeState</servlet-name>
+    <url-pattern>/ChangeState</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdjustTrustLevel</servlet-name>
+    <url-pattern>/AdjustTrustLevel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginFilter</servlet-name>
+    <url-pattern>/LoginFilter</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FlowInfo</servlet-name>
+    <url-pattern>/FlowInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FlowRank</servlet-name>
+    <url-pattern>/FlowRank</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+  	<filter-name>LoginFilter</filter-name>
+  	<filter-class>logicHandler.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LoginFilter</filter-name>
+  	<url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+</web-app>
