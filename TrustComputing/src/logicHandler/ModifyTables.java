@@ -30,10 +30,11 @@ public class ModifyTables extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
+		System.out.println(request.getQueryString());
 		ExecSql exec = new ExecSql();
 		String strSql;
 		String operator = request.getParameter("oper");
+		System.out.println(operator);
 		if(operator.equals("edit")){  //edit record and save into database
 			try{
 				String name = request.getParameter("userName");
@@ -54,14 +55,17 @@ public class ModifyTables extends HttpServlet {
 				System.out.println("modifyTables.java doPost()->edit: " + e.toString());
 				exec.closeConnection();
 			}
-		}else{  //delete record from database
-			try{
-				String userId = request.getParameter("userId");
-				strSql = "DELETE FROM userInfo WHERE userId=" + userId;
-				exec.exUpdate(strSql);
-			}catch(Exception e){
-				System.out.println("modifyTables.java doPost()->delete: " + e.toString());
-				exec.closeConnection();
+		}else {
+			if(operator.equals("del")){  //delete record from database
+				try{
+					
+					String userId = request.getParameter("userId");
+					strSql = "DELETE FROM userInfo WHERE userId=" + userId;
+					exec.exUpdate(strSql);
+				}catch(Exception e){
+					System.out.println("modifyTables.java doPost()->delete: " + e.toString());
+					exec.closeConnection();
+				}
 			}
 		}		
 		exec.closeConnection();

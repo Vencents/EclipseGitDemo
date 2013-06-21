@@ -150,7 +150,7 @@
 					</div>
 					<div class="box-content">
 						<table id="list_users_details"></table> 
-  	  					<div id="list_users_details_pager" class="scroll"></div>						
+  	  					<div id="list_users_details_pager" style="margin: 0 auto;"class="scroll"></div>						
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
@@ -221,7 +221,7 @@
 							  <div class="control-group success">
 								<label class="control-label" for="inputvalue">信任度值</label>
 								<div class="controls">
-								  	 <select id="inputlevel">
+								  	 <select id="inputvalue">
 										<option value='100'>100</option>
 										<option value='75'>75</option>
 										<option value='50'>50</option>
@@ -248,7 +248,7 @@
 					</div>
 					<div class="box-content">
 						<table id="list_users_violence"></table> 
-  	  					<div id="list_users_violence_pager" style="text-align: right;" class="scroll"></div>							
+  	  					<div id="list_users_violence_pager" style="margin: 0 auto" class="scroll"></div>							
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
@@ -265,7 +265,7 @@
 					</div>
 					<div class="box-content">
 						<table id="list_users_logs"></table> 
-  	  					<div id="list_users_logs_pager" style="text-align: right;" class="scroll"></div>							
+  	  					<div id="list_users_logs_pager" style="margin: 0 auto" class="scroll"></div>							
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->

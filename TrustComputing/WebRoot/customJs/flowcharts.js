@@ -18,7 +18,6 @@ $(document).ready(function(){
 				   {name: "realTimeFlow", width: 30, sortable: false, align: "center"}],
 		pager: $("#list_users_flow_pager"),
 		rowNum: 20,
-		rowList: [20, 25, 30],
 		height: 445,  //the height of the grid
 		width: 1135,  //the width of the grid
 		jsonReader: {

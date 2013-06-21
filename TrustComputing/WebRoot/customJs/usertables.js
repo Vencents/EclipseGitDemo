@@ -1,11 +1,10 @@
 $(document).ready(function(){
-	
 	$("#list_users_details").jqGrid({
 				url: "ManagerInfo",
 				mtype: "POST",
 				datatype: "json",
 				colNames: ["用户ID", "用户名", "密码", "用户信任级别", "信任值", "在线状态", "平台状态", "用户类型", "上次登录"],
-				colModel: [{name: "userId", index: "userId", width: 10, sortable: true, sorttype: "int", editable: false, align: "center"},
+				colModel: [{name: "userId", width: 10, sortable: true, sorttype: "int", editable: false, align: "center"},
 						   {name: "userName", width: 30, sortable: false, align: "center", editable: true, editrules: {required: true}},
 						   {name: "userPasswd", width: 30, sortable: false, align: "center", editable: true, editrules: {required: true}},
 						   {name: "trustLevel", width: 20, align: "center", editable: true, editrules: {required: true, number: true, minValue: 0, maxValue: 3}},
@@ -17,7 +16,6 @@ $(document).ready(function(){
 						   ],
 				pager: $("#list_users_details_pager"),
 				rowNum: 20,
-				rowList: [20, 30, 40],
 				height: 445,  //the height of the grid
 				width: 1135,  //the width of the grid
 				jsonReader: {
@@ -28,10 +26,8 @@ $(document).ready(function(){
 					repeatitems: false,
 				},
 				postData: {type: "multi"},
-				sortName: "id",
 				sortOrder: "desc",
 				viewrecords: false,
-				altRows: true,  //zebra-striped grid
 				forceFit: true, //auto ajust width of adjacent columns
 				hidegrid: false, //show a hide/show button on caption layer
 				loadtext: "正在加载数据...",  //loading status
@@ -80,16 +76,13 @@ $(document).ready(function(){
 						}
 					}
 				},
-				editurl: "ModifyTables"
-			}).navGrid("#list_users_details_pager", {search: false}, {add: false}, 
-												  {editData: {userId: setPostData()}, 
+			}).navGrid("#list_users_details_pager", {search: false, add: false, edit: false, del: true},
+												  {},{},
+												  {url: 'ModifyTables?userId=' + setPostData(),
 												   mtype: "POST", reloadAfterSubmit: true,
-												   height:280, top:100, left: 100, modal: true, closeAfterEdit:true}, 
-												  {delData: {userId:setPostData()},
-												   mtype: "POST", reloadAfterSubmit: true,
-												   height:120, top: 120, left: 100, modal:true});
+												   height:120, top: 180, left: 200, modal:true});
+
 	$("#list_users_violence").jqGrid({
-		sortable: true,
 		url: "ViolenceHistory",
 		mtype: "POST",
 		datatype: "json",
@@ -101,8 +94,7 @@ $(document).ready(function(){
 				   {name: "operDesc", width: 60, sortable: false, align: "left", editable: false}],
 		pager: $("#list_users_violence_pager"),
 		rowNum: 20,
-		rowList: [20, 25, 30],
-		height: 380,  //the height of the grid
+		height: 340,  //the height of the grid
 		width: 545,  //the width of the grid
 		jsonReader: {
 			root: "realData",
@@ -116,6 +108,32 @@ $(document).ready(function(){
 		forceFit: true, //auto ajust width of adjacent columns
 		loadtext: "正在努力加载数据...",  //loading status
 		caption: "终端用户违规历史记录",
+		gridComplete: function(){ //add button to see flow in real time for each row.
+			var id_arr = $("#list_users_violence").jqGrid('getDataIDs');
+			for(var i = 0; i < id_arr.length; i++){
+				var id = id_arr[i];
+				var type = $("#list_users_violence").getCell(id, 'operType');
+				if(type == 0){
+					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-success'>0</span>"});
+				}else if(type == 1){
+						$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-warning'>1</span>"});
+				}else if(type == 2){
+					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-important'>2</span>"});
+				}else{
+					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label'>3</span>"});
+				}
+				var des = $("#list_users_details").getCell(id, 'operContent');
+				if(des == 'capture'){
+					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-success'>使用截屏</span>"});					
+				}else if(des == 'copy'){
+					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-warning'>使用剪贴板</span>"});
+				}else if(des == 'login'){
+					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-important'>登陆次数过多</span>"});
+				}else {
+					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label'>流量超标</span>"});
+				}
+			}
+		}
 	}).navGrid("#list_users_violence_pager", {search: true, add: false, edit: false, del: false});
 	
 	$("#list_users_logs").jqGrid({
@@ -132,7 +150,6 @@ $(document).ready(function(){
 				   {name: "operDesc", width: 45, sortable: false, align: "left", editable: false}],
 		pager: $("#list_users_logs_pager"),
 		rowNum: 20,
-		rowList: [20, 30, 40],
 		height: 445,  //the height of the grid
 		width: 1135,  //the width of the grid
 		jsonReader: {
@@ -150,12 +167,6 @@ $(document).ready(function(){
 		caption: "系统日志详情"
 	}).navGrid("#list_users_logs_pager", {search: true, add: false, edit: false, del: false});
 });
-
-function setPostData() {
-	var rowId = $("#list_users_details").jqGrid('getGridParam','selrow');
-	var userId = $("#list_users_details").getCell(rowId, 'userId');
-	return userId;
-}
 
 $("#addUser").submit(function(event){
 	event.preventDefault();
@@ -197,10 +208,8 @@ $("#cancel_submit").click(function(){
 	$("#inputvalue").val(100);	
 })
 
-
-
-
-
-
-
-
+function setPostData() {
+	var rowId = $("#list_users_details").jqGrid('getGridParam','selrow');
+	var userId = $("#list_users_details").getCell(rowId, 'userId');
+	return userId;
+}

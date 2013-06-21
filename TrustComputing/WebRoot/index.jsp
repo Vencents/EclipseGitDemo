@@ -265,7 +265,7 @@
 					</div>
 					<div class="box-content">
 						<table id="list_manager_log"></table> 
-  	  					<div id="list_manager_log_pager" style="text-align: right;" class="scroll"></div>		
+  	  					<div id="list_manager_log_pager" style="margin: 0 auto;" class="scroll"></div>		
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->

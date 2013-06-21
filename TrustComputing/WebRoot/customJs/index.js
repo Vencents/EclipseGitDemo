@@ -36,7 +36,6 @@ $(document).ready(function(){
 				   {name: "operDesc", width: 45, sortable: false, align: "left", editable: false}],
 		pager: $("#list_manager_log_pager"),
 		rowNum: 20,
-		rowList: [20, 25, 30],
 		height: 445,  //the height of the grid
 		width: 1135,  //the width of the grid
 		postData: {type: "single"},

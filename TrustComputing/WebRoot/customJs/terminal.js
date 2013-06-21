@@ -20,6 +20,7 @@ $(document).ready(function(){
 			root: "realData",
 			repeatitems: false,
 		},
+		rowNum: 20,
 		pager: $("#list_terminal_details_pager"),
 		altRows: true,  //zebra-striped grid
 		forceFit: true, //auto ajust width of adjacent columns
@@ -62,7 +63,6 @@ $(document).ready(function(){
 		height: 445,
 		width: 1135,
 		rowNum: 20,
-		rowList: [20, 30, 40],
 		hidegrid: false, //show a hide/show button on caption layer
 		loadtext: "正在加载数据...",  //loading status
 		caption: "进程映像",
@@ -79,7 +79,6 @@ $(document).ready(function(){
 				   {name: "stateControl", width: 35, sortable: false, align: "center", editable: false}],
 		pager: $("#list_terminal_remote_pager"),
 		rowNum: 20,
-		rowList: [20, 30, 40],
 		height: 350,  //the height of the grid
 		width: 545,  //the width of the grid
 		jsonReader: {

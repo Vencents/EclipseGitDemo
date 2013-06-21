@@ -151,7 +151,7 @@
 					</div>
 					<div class="box-content">
 						<table id="list_users_flow"></table> 
-  	  					<div id="list_users_flow_pager" class="scroll"></div>
+  	  					<div id="list_users_flow_pager" style="margin: 0 auto;"class="scroll"></div>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->

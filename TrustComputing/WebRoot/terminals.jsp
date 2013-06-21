@@ -149,7 +149,7 @@
 					</div>
 					<div class="box-content">
 						<table id="list_terminal_details"></table> 
-  	  					<div id="list_terminal_details_pager" style="text-align: right;" class="scroll"></div>
+  	  					<div id="list_terminal_details_pager" style="margin: 0 auto;" class="scroll"></div>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
@@ -166,7 +166,7 @@
 					</div>
 					<div class="box-content">
 						<table id="list_terminal_process"></table> 
-  	  					<div id="list_terminal_process_pager" style="text-align: right;" class="scroll"></div>						
+  	  					<div id="list_terminal_process_pager" style="margin: 0 auto;" class="scroll"></div>						
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
