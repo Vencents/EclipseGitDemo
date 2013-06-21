@@ -14,8 +14,8 @@ $(document).ready(function(){
 				$("#state").html('平台可信');
 			else
 				$("#state").html('平台不可信');
-			$("#level").html(data.trustLevel);
-			$("#value").html(data.trustValue);
+			$("#level").html('无上限');
+			$("#value").html('无上限');
 			if(data.userType == '2')
 				$("#type").html('管理员');
 			else
