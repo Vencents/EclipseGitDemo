@@ -87,10 +87,10 @@ $(document).ready(function(){
 		mtype: "POST",
 		datatype: "json",
 		colNames: ["用户名称", "操作类型", "操作发生时间", "操作内容值", "行为描述"],
-		colModel: [{name: "userName", index: "userName", width: 20, sortable: false, editable: false, align: "right"},
+		colModel: [{name: "userName", index: "userName", width: 20, sortable: false, editable: false, align: "center"},
 				   {name: "operType", width: 15, sortable: true, align: "center", editable: true, editrules: {required: true}},
 				   {name: "operTime", width: 40, sortable: false, align: "center", editable: true, editrules: {required: true}},
-				   {name: "operContent", width: 20, sortable: false, align: "center", editable: false},
+				   {name: "operContent", width: 25, sortable: false, align: "center", editable: false},
 				   {name: "operDesc", width: 60, sortable: false, align: "left", editable: false}],
 		pager: $("#list_users_violence_pager"),
 		rowNum: 20,
@@ -114,23 +114,23 @@ $(document).ready(function(){
 				var id = id_arr[i];
 				var type = $("#list_users_violence").getCell(id, 'operType');
 				if(type == 0){
-					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-success'>0</span>"});
+					$("#list_users_violence").jqGrid('setRowData', id, {operType: "<span class='label label-success'>0</span>"});
 				}else if(type == 1){
-						$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-warning'>1</span>"});
+					$("#list_users_violence").jqGrid('setRowData', id, {operType: "<span class='label label-success'>1</span>"});
 				}else if(type == 2){
-					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-important'>2</span>"});
+					$("#list_users_violence").jqGrid('setRowData', id, {operType: "<span class='label label-success'>2</span>"});
 				}else{
-					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label'>3</span>"});
+					$("#list_users_violence").jqGrid('setRowData', id, {operType: "<span class='label label-success'>3</span>"});
 				}
-				var des = $("#list_users_details").getCell(id, 'operContent');
-				if(des == 'capture'){
-					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-success'>使用截屏</span>"});					
-				}else if(des == 'copy'){
-					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-warning'>使用剪贴板</span>"});
-				}else if(des == 'login'){
-					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label label-important'>登陆次数过多</span>"});
+				var des = $("#list_users_violence").getCell(id, 'operContent');
+				if(des == "capture"){
+					$("#list_users_violence").jqGrid('setRowData', id, {operContent: "<span class='label label-success'>使用截屏</span>"});					
+				}else if(des == "copy"){
+					$("#list_users_violence").jqGrid('setRowData', id, {operContent: "<span class='label label-warning'>使用剪贴板</span>"});
+				}else if(des == "login"){
+					$("#list_users_violence").jqGrid('setRowData', id, {operContent: "<span class='label label-important'>登陆次数过多</span>"});
 				}else {
-					$("#list_users_violence").jqGrid('setRowData', id, {trustLevel: "<span class='label'>流量超标</span>"});
+					$("#list_users_violence").jqGrid('setRowData', id, {operContent: "<span class='label label-warning'>流量超标</span>"});
 				}
 			}
 		}
