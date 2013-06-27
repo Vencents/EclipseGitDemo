@@ -15,7 +15,7 @@ EclipseGitDemo
        as the web server.
    * Open your Myeclipse workspace, import the project into the workbench and make your changes.
    * Last but not least, you should commit your changes to Github as soon as possible when you finished your modifications. If you don't know how to accomplish this step, please visit https://help.github.com/articles.
-Lisence about the project
+2.Lisence about the project
 ----------------------------
 1. This is a free software which you can modify, rebuild, redistribute in any circumstances.
 2. Before you integrate the snippet code of the project into other commercial production, you don't have to do anything else to solve legal problems.
