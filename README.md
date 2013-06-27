@@ -1,6 +1,5 @@
 EclipseGitDemo
-==============
-
+============== 
 Test Git integrated with Myeclipse
 
 Q: How to get the copy of the project?
@@ -14,3 +13,4 @@ A: As the project is developed with Myeclipse, any developers who wants to deplo
    (3) Install Mysql database and Apache tomcat web server since the project uses MySql as backend database and Tomcat 
        as the web server.
    (4) Open your Myeclipse workspace, import the project into the workbench and make your changes.
+   (5) Last but not least, you should commit your changes to Github as soon as possible when you finished your modifications. If you don't know how to accomplish this step, please visit https://help.github.com/articles.
